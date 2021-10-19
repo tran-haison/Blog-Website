@@ -1,9 +1,33 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
+posts = [
+    {
+        'author': 'CoreyMS',
+        'title': 'Blog Post 1',
+        'content': 'First post content',
+        'date_posted': 'October 19th, 2021',
+    },
+    {
+        'author': 'Hai Son',
+        'title': 'Blog Post 2',
+        'content': 'Second post content',
+        'date_posted': 'November 20th, 2032',
+    },
+]
+
 
 def home(request):
-    return HttpResponse("<h1>Blog Home</h1>")
+    # Data needs to be passed
+    context = {
+        'posts': posts
+    }
+
+    # Return a http response
+    # Specify a relative path from "templates" folder
+    return render(request, 'blog/home.html', context)
 
 
 def about(request):
-    return HttpResponse("<h1>About</h1>")
+    # Return a http response
+    # Specify a relative path from "templates" folder
+    return render(request, 'blog/about.html', {'title': 'About'})
