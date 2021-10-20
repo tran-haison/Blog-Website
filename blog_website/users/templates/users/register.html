@@ -1,0 +1,37 @@
+<!-- Extends from blog/base.html -->
+{% extends "blog/base.html" %}
+
+<!-- Load crispy form style -->
+{% load crispy_forms_tags %}
+
+<!-- Start block content -->
+{% block content %}
+
+<div class="content-section">
+    <form method="POST">
+        <!-- CSRF token adds security that Django require before using form -->
+        {% csrf_token %}
+
+        <!-- Form -->
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Join Today</legend>
+            <!-- Django built-in form with crispy style -->
+            {{ form|crispy }}
+        </fieldset>
+
+        <!-- Sign up button -->
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Sign Up</button>
+        </div>
+    </form>
+
+    <!-- Sign in button -->
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Already have an account? <a class="ml-2" href="#">Sign In</a>
+        </small>
+    </div>
+</div>
+
+<!-- End block content -->
+{% endblock content %}
