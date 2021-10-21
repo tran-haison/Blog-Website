@@ -1,0 +1,13 @@
+<!-- Extends from blog/base.html -->
+{% extends "blog/base.html" %}
+
+<!-- Load crispy form style -->
+{% load crispy_forms_tags %}
+
+<!-- Start block content -->
+{% block content %}
+
+<h1>{{ user.username }}</h1>
+
+<!-- End block content -->
+{% endblock content %}

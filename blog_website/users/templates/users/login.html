@@ -14,21 +14,21 @@
 
         <!-- Form -->
         <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Join Today</legend>
+            <legend class="border-bottom mb-4">Log In</legend>
             <!-- Django built-in form with crispy style -->
             {{ form|crispy }}
         </fieldset>
 
-        <!-- Sign up button -->
+        <!-- Log in button -->
         <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Sign Up</button>
+            <button class="btn btn-outline-info" type="submit">Login</button>
         </div>
     </form>
 
-    <!-- Sign in button -->
+    <!-- Sign up button -->
     <div class="border-top pt-3">
         <small class="text-muted">
-            Already have an account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+            Need an account? <a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
         </small>
     </div>
 </div>
