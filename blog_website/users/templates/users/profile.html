@@ -15,7 +15,23 @@
             <p class="text-secondary">{{ user.email }}</p>
         </div>
     </div>
-    <!-- FORM HERE -->
+
+    <form method="POST" enctype="multipart/form-data">
+        <!-- CSRF token adds security that Django require before using form -->
+        {% csrf_token %}
+
+        <!-- Form -->
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Profile Info</legend>
+            <!-- Django built-in form with crispy style -->
+            {{ u_form|crispy }} {{ p_form|crispy }}
+        </fieldset>
+
+        <!-- Sign up button -->
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Update</button>
+        </div>
+    </form>
 </div>
 
 <!-- End block content -->
