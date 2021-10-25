@@ -1,0 +1,30 @@
+<!-- Extends from blog/base.html -->
+{% extends "blog/base.html" %}
+
+<!-- Load crispy form style -->
+{% load crispy_forms_tags %}
+
+<!-- Start block content -->
+{% block content %}
+
+<div class="content-section">
+    <form method="POST">
+        <!-- CSRF token adds security that Django require before using form -->
+        {% csrf_token %}
+
+        <!-- Form -->
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Blog Post</legend>
+            <!-- Django built-in form with crispy style -->
+            {{ form|crispy }}
+        </fieldset>
+
+        <!-- Post button -->
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Post</button>
+        </div>
+    </form>
+</div>
+
+<!-- End block content -->
+{% endblock content %}
